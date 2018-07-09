@@ -3,6 +3,7 @@ package com.belili.model;
 public class Model_user {
 
     private Integer id_user;
+    private String code_user;
     private String type_user;
     private String username_user;
     private String password_user;
@@ -15,6 +16,14 @@ public class Model_user {
 
     public void setId_user(Integer id_user) {
         this.id_user = id_user;
+    }
+
+    public String getCode_user() {
+        return code_user;
+    }
+
+    public void setCode_user(String code_user) {
+        this.code_user = code_user;
     }
 
     public String getType_user() {
@@ -59,7 +68,7 @@ public class Model_user {
 
     @Override
     public String toString() {
-        return "User{" + "id_user=" + id_user + ", type_user=" + type_user + ", username_user=" + username_user + ", password_user=" + password_user + ", fullname_user=" + fullname_user + ", correo_user=" + correo_user + '}';
+        return "Model_user{" + "id_user=" + id_user + ", code_user=" + code_user + ", type_user=" + type_user + ", username_user=" + username_user + ", password_user=" + password_user + ", fullname_user=" + fullname_user + ", correo_user=" + correo_user + '}';
     }
 
 }

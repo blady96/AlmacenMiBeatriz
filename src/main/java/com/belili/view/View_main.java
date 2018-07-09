@@ -5,6 +5,11 @@
  */
 package com.belili.view;
 
+import com.belili.dao.Dao_userList;
+import com.belili.model.Model_user;
+import java.util.ArrayList;
+import javax.swing.JTable;
+
 /**
  *
  * @author belili
@@ -16,6 +21,37 @@ public class View_main extends javax.swing.JFrame {
      */
     public View_main() {
         initComponents();
+        construirTabla();
+
+    }
+
+    private void construirTabla() {
+        String titulos[] = {"ID","Codigo", "Nombre", "Edad", "Profesión", "Telefono"};
+        String informacion[][] = obtenerMatriz();
+
+        table_userList = new JTable(informacion, titulos);
+        jScrollPane1.setViewportView(table_userList);
+
+    }
+
+    private String[][] obtenerMatriz() {
+
+        Dao_userList miPersonaDao = new Dao_userList();
+        ArrayList<Model_user> miLista = miPersonaDao.buscarUsuariosConMatriz();
+
+        String matrizInfo[][] = new String[miLista.size()][7];
+
+        for (int i = 0; i < miLista.size(); i++) {
+            matrizInfo[i][0] = miLista.get(i).getId_user() + "";
+            matrizInfo[i][1] = miLista.get(i).getCode_user() + "";
+            matrizInfo[i][2] = miLista.get(i).getType_user() + "";
+            matrizInfo[i][3] = miLista.get(i).getFullname_user() + "";
+            matrizInfo[i][4] = miLista.get(i).getCorreo_user() + "";
+            matrizInfo[i][5] = miLista.get(i).getUsername_user() + "";
+            matrizInfo[i][6] = miLista.get(i).getPassword_user() + "";
+        }
+
+        return matrizInfo;
     }
 
     /**
@@ -27,31 +63,86 @@ public class View_main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        btn_main_recorder_create = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table_userList = new javax.swing.JTable();
+        btn_actualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Hello..!!");
+        btn_main_recorder_create.setText("Crear Registrador");
+        btn_main_recorder_create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_main_recorder_createActionPerformed(evt);
+            }
+        });
+
+        table_userList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Codigo", "Tipo", "Nombres", "Correo", "Usuario", "Clave"
+            }
+        ));
+        jScrollPane1.setViewportView(table_userList);
+
+        btn_actualizar.setText("Actualizar");
+        btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_main_recorder_create, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_actualizar, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addComponent(jLabel1)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(btn_main_recorder_create)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(btn_actualizar)
+                .addContainerGap(241, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_main_recorder_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_recorder_createActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_main_recorder_createActionPerformed
+
+    private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
+        // TODO add your handling code here:
+        
+        construirTabla();
+        
+    }//GEN-LAST:event_btn_actualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +180,9 @@ public class View_main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btn_actualizar;
+    public javax.swing.JButton btn_main_recorder_create;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable table_userList;
     // End of variables declaration//GEN-END:variables
 }

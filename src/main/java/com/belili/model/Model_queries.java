@@ -4,14 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class Model_login extends Model_connect {
+public class Model_queries extends Model_connect {
 
     public boolean create_user(Model_user user) {
 
         PreparedStatement ps = null;
         Connection c = (Connection) getConnection();
 
-        String sql = "INSERT INTO users (type_user,username_user,password_user,fullname_user,correo_user) VALUES (?,?,?,?,?)";
+//        String sql = "INSERT INTO users (type_user,username_user,password_user,"
+//                + "fullname_user,correo_user) VALUES (?,?,?,?,?)";
+        String sql = "CALL REGISTRAR_USUARIO (?,?,?,?,?)";
 
         try {
 
@@ -106,7 +108,7 @@ public class Model_login extends Model_connect {
         ResultSet rs = null;
         Connection c = (Connection) getConnection();
 
-        String sql = "SELECT * FROM users WHERE username_user=? AND password_user=?";
+        String sql = "SELECT * FROM USERS WHERE username_user=? AND password_user=?";
 
         try {
 
