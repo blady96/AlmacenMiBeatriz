@@ -5,6 +5,12 @@
  */
 package com.belili.view;
 
+import com.belili.model.Model_image;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import oracle.jrockit.jfr.JFR;
+
 /**
  *
  * @author belili
@@ -16,6 +22,7 @@ public class View_createUser extends javax.swing.JFrame {
      */
     public View_createUser() {
         initComponents();
+
     }
 
     /**
@@ -33,14 +40,16 @@ public class View_createUser extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txt_recorder_fullname = new javax.swing.JTextField();
-        txt_recorder_correo = new javax.swing.JTextField();
-        txt_recorder_username = new javax.swing.JTextField();
-        txt_recorder_password = new javax.swing.JTextField();
-        txt_recorder_repassword = new javax.swing.JTextField();
+        txt_userFullname = new javax.swing.JTextField();
+        txt_userCorreo = new javax.swing.JTextField();
+        txt_userUsername = new javax.swing.JTextField();
+        txt_userPassword = new javax.swing.JTextField();
+        txt_userRepassword = new javax.swing.JTextField();
         btn_recorder_register = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         cbx_userType = new javax.swing.JComboBox<>();
+        jp_image = new javax.swing.JPanel();
+        btn_upload_image = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,6 +72,26 @@ public class View_createUser extends javax.swing.JFrame {
 
         cbx_userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Almacen", "Registro", "Cliente" }));
 
+        jp_image.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jp_imageLayout = new javax.swing.GroupLayout(jp_image);
+        jp_image.setLayout(jp_imageLayout);
+        jp_imageLayout.setHorizontalGroup(
+            jp_imageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jp_imageLayout.setVerticalGroup(
+            jp_imageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+
+        btn_upload_image.setText("Cargar Imagen");
+        btn_upload_image.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_upload_imageActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +99,9 @@ public class View_createUser extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(961, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -82,15 +113,24 @@ public class View_createUser extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cbx_userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(btn_recorder_register)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txt_recorder_fullname)
-                                    .addComponent(txt_recorder_correo)
-                                    .addComponent(txt_recorder_username)
-                                    .addComponent(txt_recorder_password)
-                                    .addComponent(txt_recorder_repassword, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))))))
-                .addContainerGap(279, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txt_userPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                                .addComponent(txt_userUsername, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_userCorreo, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_userFullname, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_userRepassword)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jp_image, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(181, 181, 181))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btn_upload_image)
+                                .addGap(209, 209, 209))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_recorder_register)
+                .addGap(452, 452, 452))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,36 +138,66 @@ public class View_createUser extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(cbx_userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_recorder_fullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_recorder_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(42, 42, 42)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(cbx_userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_userFullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_userCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_userUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jp_image, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_recorder_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_recorder_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(33, 33, 33)
+                    .addComponent(txt_userPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(btn_upload_image))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_recorder_repassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_userRepassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(51, 51, 51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addComponent(btn_recorder_register)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addGap(91, 91, 91))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_upload_imageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_upload_imageActionPerformed
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.PNG", "png");
+        fileChooser.setFileFilter(filter);
+
+        int seleccion = fileChooser.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+
+            File fichero = fileChooser.getSelectedFile();
+            String ruta = fichero.getAbsolutePath();
+
+            int x = jp_image.getWidth();
+            int y = jp_image.getHeight();
+
+            Model_image img = new Model_image(x, y, ruta);
+            jp_image.add(img);
+            jp_image.repaint();
+        }
+
+
+    }//GEN-LAST:event_btn_upload_imageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +237,7 @@ public class View_createUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_recorder_register;
+    public javax.swing.JButton btn_upload_image;
     public javax.swing.JComboBox<String> cbx_userType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -175,10 +246,11 @@ public class View_createUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    public javax.swing.JTextField txt_recorder_correo;
-    public javax.swing.JTextField txt_recorder_fullname;
-    public javax.swing.JTextField txt_recorder_password;
-    public javax.swing.JTextField txt_recorder_repassword;
-    public javax.swing.JTextField txt_recorder_username;
+    public javax.swing.JPanel jp_image;
+    public javax.swing.JTextField txt_userCorreo;
+    public javax.swing.JTextField txt_userFullname;
+    public javax.swing.JTextField txt_userPassword;
+    public javax.swing.JTextField txt_userRepassword;
+    public javax.swing.JTextField txt_userUsername;
     // End of variables declaration//GEN-END:variables
 }

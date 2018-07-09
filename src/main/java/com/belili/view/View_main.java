@@ -29,8 +29,8 @@ public class View_main extends javax.swing.JFrame {
         String titulos[] = {"ID","Codigo", "Nombre", "Edad", "Profesión", "Telefono"};
         String informacion[][] = obtenerMatriz();
 
-        table_userList = new JTable(informacion, titulos);
-        jScrollPane1.setViewportView(table_userList);
+        table_main_userList = new JTable(informacion, titulos);
+        jScrollPane1.setViewportView(table_main_userList);
 
     }
 
@@ -63,21 +63,21 @@ public class View_main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_main_recorder_create = new javax.swing.JButton();
+        btn_main_createUser = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_userList = new javax.swing.JTable();
-        btn_actualizar = new javax.swing.JButton();
+        table_main_userList = new javax.swing.JTable();
+        btn_main_update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_main_recorder_create.setText("Crear Registrador");
-        btn_main_recorder_create.addActionListener(new java.awt.event.ActionListener() {
+        btn_main_createUser.setText("Crear Registrador");
+        btn_main_createUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_main_recorder_createActionPerformed(evt);
+                btn_main_createUserActionPerformed(evt);
             }
         });
 
-        table_userList.setModel(new javax.swing.table.DefaultTableModel(
+        table_main_userList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -94,12 +94,12 @@ public class View_main extends javax.swing.JFrame {
                 "ID", "Codigo", "Tipo", "Nombres", "Correo", "Usuario", "Clave"
             }
         ));
-        jScrollPane1.setViewportView(table_userList);
+        jScrollPane1.setViewportView(table_main_userList);
 
-        btn_actualizar.setText("Actualizar");
-        btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+        btn_main_update.setText("Actualizar");
+        btn_main_update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_actualizarActionPerformed(evt);
+                btn_main_updateActionPerformed(evt);
             }
         });
 
@@ -114,35 +114,35 @@ public class View_main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_main_recorder_create, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_actualizar, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(btn_main_createUser, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_main_update, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_main_recorder_create)
+                .addComponent(btn_main_createUser)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addComponent(btn_actualizar)
+                .addComponent(btn_main_update)
                 .addContainerGap(241, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_main_recorder_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_recorder_createActionPerformed
+    private void btn_main_createUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_createUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_main_recorder_createActionPerformed
+    }//GEN-LAST:event_btn_main_createUserActionPerformed
 
-    private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
+    private void btn_main_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_main_updateActionPerformed
         // TODO add your handling code here:
         
         construirTabla();
         
-    }//GEN-LAST:event_btn_actualizarActionPerformed
+    }//GEN-LAST:event_btn_main_updateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,9 +180,9 @@ public class View_main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn_actualizar;
-    public javax.swing.JButton btn_main_recorder_create;
+    public javax.swing.JButton btn_main_createUser;
+    public javax.swing.JButton btn_main_update;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable table_userList;
+    public javax.swing.JTable table_main_userList;
     // End of variables declaration//GEN-END:variables
 }
