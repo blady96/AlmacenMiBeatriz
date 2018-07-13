@@ -1,14 +1,18 @@
 package com.belili.model;
 
+import java.awt.image.BufferedImage;
+
 public class Model_user {
 
     private Integer id_user;
     private String code_user;
     private String type_user;
+    private BufferedImage img_user;
     private String username_user;
     private String password_user;
     private String fullname_user;
     private String correo_user;
+    private String phone_user;
 
     public Integer getId_user() {
         return id_user;
@@ -32,6 +36,14 @@ public class Model_user {
 
     public void setType_user(String type_user) {
         this.type_user = type_user;
+    }
+
+    public BufferedImage getImg_user() {
+        return img_user;
+    }
+
+    public void setImg_user(BufferedImage img_user) {
+        this.img_user = img_user;
     }
 
     public String getUsername_user() {
@@ -66,9 +78,12 @@ public class Model_user {
         this.correo_user = correo_user;
     }
 
-    @Override
-    public String toString() {
-        return "Model_user{" + "id_user=" + id_user + ", code_user=" + code_user + ", type_user=" + type_user + ", username_user=" + username_user + ", password_user=" + password_user + ", fullname_user=" + fullname_user + ", correo_user=" + correo_user + '}';
+    public String getPhone_user() {
+        return phone_user;
+    }
+
+    public void setPhone_user(String phone_user) {
+        this.phone_user = phone_user;
     }
 
 }

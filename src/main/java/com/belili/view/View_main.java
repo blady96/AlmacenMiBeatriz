@@ -63,17 +63,49 @@ public class View_main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_main_registry = new javax.swing.JPanel();
         btn_main_createUser = new javax.swing.JButton();
+        btn_main_update = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_main_userList = new javax.swing.JTable();
-        btn_main_update = new javax.swing.JButton();
+        jp_main_profile = new javax.swing.JPanel();
+        jp_profile_imgUser = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txt_profile_fullnameUser = new javax.swing.JTextField();
+        txt_profile_typeUser = new javax.swing.JTextField();
+        txt_profile_correoUser = new javax.swing.JTextField();
+        txt_profile_phoneUser = new javax.swing.JTextField();
+        txt_profile_codeUser = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        m_registry = new javax.swing.JMenu();
+        jmi_users = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jmi_profile = new javax.swing.JMenuItem();
+        jmi_logout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jp_main_registry.setBackground(new java.awt.Color(204, 255, 204));
 
         btn_main_createUser.setText("Crear Registrador");
         btn_main_createUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_main_createUserActionPerformed(evt);
+            }
+        });
+
+        btn_main_update.setText("Actualizar");
+        btn_main_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_main_updateActionPerformed(evt);
             }
         });
 
@@ -96,38 +128,180 @@ public class View_main extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table_main_userList);
 
-        btn_main_update.setText("Actualizar");
-        btn_main_update.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jp_main_registryLayout = new javax.swing.GroupLayout(jp_main_registry);
+        jp_main_registry.setLayout(jp_main_registryLayout);
+        jp_main_registryLayout.setHorizontalGroup(
+            jp_main_registryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_main_registryLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_main_registryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_main_registryLayout.createSequentialGroup()
+                        .addComponent(btn_main_createUser)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_main_update)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jp_main_registryLayout.setVerticalGroup(
+            jp_main_registryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_main_registryLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_main_registryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_main_createUser)
+                    .addComponent(btn_main_update))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(307, Short.MAX_VALUE))
+        );
+
+        jp_main_profile.setBackground(new java.awt.Color(255, 255, 204));
+
+        jp_profile_imgUser.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jp_profile_imgUserLayout = new javax.swing.GroupLayout(jp_profile_imgUser);
+        jp_profile_imgUser.setLayout(jp_profile_imgUserLayout);
+        jp_profile_imgUserLayout.setHorizontalGroup(
+            jp_profile_imgUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        jp_profile_imgUserLayout.setVerticalGroup(
+            jp_profile_imgUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+
+        jLabel1.setText("Nombre Completo");
+
+        jLabel2.setText("Cargo");
+
+        jLabel3.setText("Correo Electronico");
+
+        jLabel4.setText("Telefono");
+
+        jLabel5.setText("Codigo");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 501, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 181, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jp_main_profileLayout = new javax.swing.GroupLayout(jp_main_profile);
+        jp_main_profile.setLayout(jp_main_profileLayout);
+        jp_main_profileLayout.setHorizontalGroup(
+            jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_main_profileLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_profile_imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(48, 48, 48)
+                .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_profile_fullnameUser)
+                    .addComponent(txt_profile_typeUser)
+                    .addComponent(txt_profile_correoUser)
+                    .addComponent(txt_profile_phoneUser)
+                    .addComponent(txt_profile_codeUser))
+                .addContainerGap())
+            .addGroup(jp_main_profileLayout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(148, Short.MAX_VALUE))
+        );
+        jp_main_profileLayout.setVerticalGroup(
+            jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_main_profileLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_main_profileLayout.createSequentialGroup()
+                        .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txt_profile_fullnameUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txt_profile_typeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txt_profile_correoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txt_profile_phoneUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jp_main_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txt_profile_codeUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jp_profile_imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        jMenu1.setText("Productos");
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setText("Mantenimiento");
+        jMenuBar1.add(jMenu3);
+
+        jMenu2.setText("Almacen");
+        jMenuBar1.add(jMenu2);
+
+        m_registry.setText("Registro");
+
+        jmi_users.setText("Usuarios");
+        jmi_users.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_main_updateActionPerformed(evt);
+                jmi_usersActionPerformed(evt);
             }
         });
+        m_registry.add(jmi_users);
+
+        jMenuBar1.add(m_registry);
+
+        jMenu4.setText("Sesion");
+
+        jmi_profile.setText("Perfil");
+        jmi_profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_profileActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jmi_profile);
+
+        jmi_logout.setText("Cerrar Sesion");
+        jMenu4.add(jmi_logout);
+
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_main_createUser, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_main_update, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
+            .addComponent(jp_main_registry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jp_main_profile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_main_createUser)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(btn_main_update)
-                .addContainerGap(241, Short.MAX_VALUE))
+            .addComponent(jp_main_registry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jp_main_profile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,6 +317,12 @@ public class View_main extends javax.swing.JFrame {
         construirTabla();
         
     }//GEN-LAST:event_btn_main_updateActionPerformed
+
+    private void jmi_profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_profileActionPerformed
+    }//GEN-LAST:event_jmi_profileActionPerformed
+
+    private void jmi_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_usersActionPerformed
+    }//GEN-LAST:event_jmi_usersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +362,30 @@ public class View_main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_main_createUser;
     public javax.swing.JButton btn_main_update;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JMenuItem jmi_logout;
+    public javax.swing.JMenuItem jmi_profile;
+    public javax.swing.JMenuItem jmi_users;
+    public javax.swing.JPanel jp_main_profile;
+    public javax.swing.JPanel jp_main_registry;
+    public javax.swing.JPanel jp_profile_imgUser;
+    private javax.swing.JMenu m_registry;
     public javax.swing.JTable table_main_userList;
+    public javax.swing.JTextField txt_profile_codeUser;
+    public javax.swing.JTextField txt_profile_correoUser;
+    public javax.swing.JTextField txt_profile_fullnameUser;
+    public javax.swing.JTextField txt_profile_phoneUser;
+    public javax.swing.JTextField txt_profile_typeUser;
     // End of variables declaration//GEN-END:variables
 }
